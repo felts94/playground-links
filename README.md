@@ -2,7 +2,7 @@
 links of golang playgrounds I've used to test something
 
 # testing writing to an out of scope var is thread safe
-https://play.golang.org/p/KITUN-ItcsP
+https://play.golang.org/p/m3hfAtTfMhN
 ```
 package main
 
@@ -22,7 +22,6 @@ func main() {
 	}()
 	go func() {
 		for {
-
 			vs = []string{"second"}
 			fmt.Println("second done", vs)
 			time.Sleep(500 * time.Microsecond)
