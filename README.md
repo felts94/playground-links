@@ -33,3 +33,28 @@ func main() {
 	}
 }
 ```
+
+# pass by copy sanity check
+https://play.golang.org/p/2jDcMItVHOJ
+
+```
+package main
+
+import "fmt"
+
+type Bar struct {
+	Zap string
+}
+
+func main() {
+	bar := Bar{Zap: "first"}
+	foo(bar)
+	fmt.Println(bar.Zap)
+}
+
+func foo(bar Bar) {
+	fmt.Println(bar.Zap)
+	bar.Zap = "second"
+	fmt.Println(bar.Zap)
+}
+```
