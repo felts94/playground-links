@@ -58,3 +58,7 @@ func foo(bar Bar) {
 	fmt.Println(bar.Zap)
 }
 ```
+# remove all redis keys matching a pattern
+```
+redis-cli EVAL "return redis.call('DEL', unpack(redis.call('KEYS', 'YOUR_PATTERN' .. '*')))" 0 prefix:
+```
